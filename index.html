@@ -4,313 +4,608 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101010">
-<meta name="description" content="GIGANET؛ مجموعه خدمات دیجیتال، کامپیوتری و دانشجویی در سوسنگرد">
-<title>GIGANET | مجموعه دیجیتالی گیگانت</title>
+<meta name="theme-color" content="#081426">
+<meta name="description" content="GIGANET؛ مرکز خدمات دیجیتال، کامپیوتری، دانشجویی، فروش و آموزش در سوسنگرد">
+<title>GIGANET | دنیای دیجیتال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap');
-
+:root{
+ --bg:#081426;
+ --surface:#10233d;
+ --surface2:#142d49;
+ --border:#244767;
+ --text:#f3f8ff;
+ --muted:#a9bad0;
+ --accent:#38d6c4;
+ --blue:#39b9e8;
+ --shadow:0 12px 35px rgba(0,0,0,.2);
+}
+body.light{
+ --bg:#f3f6fb;
+ --surface:#fff;
+ --surface2:#eaf1f8;
+ --border:#d5e0eb;
+ --text:#17283b;
+ --muted:#63758a;
+ --shadow:0 12px 35px rgba(30,60,90,.08);
+}
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
- margin:0;background:#101010;color:#fff;
+ margin:0;background:var(--bg);color:var(--text);
  font-family:'Vazirmatn',Tahoma,sans-serif;
+ transition:background .25s,color .25s;
 }
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+button{cursor:pointer}
+.container{width:min(1120px,92%);margin:auto}
 header{
- padding:22px 18px;text-align:center;
- background:linear-gradient(135deg,#242424,#101010);
- border-bottom:2px solid #d5a62e;
+ position:sticky;top:0;z-index:100;
+ background:var(--surface);
+ border-bottom:1px solid var(--border);
+ box-shadow:var(--shadow);
 }
-.logo{font-size:35px;font-weight:800;color:#e9b83e;letter-spacing:3px}
-header p{color:#bbb;margin:5px 0}
+.navbar{
+ min-height:75px;display:flex;align-items:center;
+ justify-content:space-between;gap:15px;
+}
+.logo{font-size:27px;font-weight:800;color:var(--accent);letter-spacing:2px}
+.logo small{display:block;font-size:10px;letter-spacing:0;color:var(--muted);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--accent)}
+.nav-actions{display:flex;align-items:center;gap:8px}
+.icon-btn{
+ border:1px solid var(--border);background:var(--surface2);
+ color:var(--text);border-radius:10px;padding:9px 12px;
+}
+.menu-btn{display:none}
 .hero{
- padding:45px 20px;text-align:center;
- background:radial-gradient(circle at top,#392a12,#151515 65%);
+ padding:75px 15px 55px;text-align:center;
+ background:radial-gradient(ellipse at top,#16436a 0%,var(--bg) 68%);
 }
-.hero h1{font-size:27px;color:#f4c34e;margin:0 0 12px}
-.hero p{color:#ddd;line-height:2}
+.eyebrow{
+ display:inline-block;color:var(--accent);
+ border:1px solid var(--border);border-radius:30px;
+ padding:6px 15px;font-size:12px;margin-bottom:15px;
+}
+.hero h1{font-size:clamp(29px,5vw,48px);margin:8px 0;color:var(--text)}
+.hero h1 span{color:var(--accent)}
+.hero p{
+ max-width:680px;margin:15px auto 22px;
+ color:var(--muted);line-height:2.2;font-size:15px;
+}
 .btn{
- display:inline-block;padding:11px 22px;margin:8px;
- border-radius:9px;background:#d5a62e;
- color:#171717;text-decoration:none;font-weight:700;
+ display:inline-flex;align-items:center;justify-content:center;
+ gap:7px;padding:12px 20px;border-radius:11px;
+ background:var(--accent);color:#06252b;font-weight:800;
+ border:0;transition:.2s;
 }
-.btn.red{background:#b52626;color:white}
-.container{max-width:950px;margin:auto;padding:25px 16px}
-h2{text-align:center;color:#f0bd45;margin-bottom:25px}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn.secondary{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.hero-buttons{display:flex;justify-content:center;flex-wrap:wrap;gap:10px}
+.search-wrap{
+ width:min(690px,92%);margin:30px auto 0;
+ position:relative;text-align:right;
+}
+.search-box{
+ display:flex;align-items:center;gap:10px;
+ padding:7px 13px;background:var(--surface);
+ border:1px solid var(--border);border-radius:15px;
+ box-shadow:var(--shadow);
+}
+.search-box input{
+ width:100%;border:0;outline:0;background:transparent;
+ color:var(--text);padding:12px 5px;font-size:14px;
+}
+.search-box input::placeholder{color:var(--muted)}
+.search-results{
+ display:none;position:absolute;top:calc(100% + 8px);
+ right:0;left:0;z-index:30;background:var(--surface);
+ border:1px solid var(--border);border-radius:13px;
+ padding:8px;box-shadow:var(--shadow);max-height:320px;overflow:auto;
+}
+.search-results.show{display:block}
+.search-item{
+ display:block;width:100%;text-align:right;padding:12px;
+ border:0;border-radius:9px;background:transparent;color:var(--text);
+}
+.search-item:hover{background:var(--surface2)}
+.search-item small{display:block;color:var(--accent);margin-top:4px}
+.section{padding:55px 0}
+.section-head{text-align:center;margin-bottom:28px}
+.section-head h2{font-size:25px;margin:0 0 9px}
+.section-head p{color:var(--muted);font-size:13px;line-height:2;margin:0}
 .grid{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
- gap:13px;
+ display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px;
 }
 .card{
- background:#202020;border:1px solid #393939;
- border-radius:14px;padding:23px 10px;text-align:center;
- transition:.2s;
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:17px;padding:22px 16px;
+ transition:.22s;min-height:185px;
 }
-.card:hover{border-color:#e3b33d;transform:translateY(-3px)}
-.card .emoji{font-size:34px}
-.card h3{font-size:15px;color:#f1c34e;margin:12px 0 5px}
-.card p{font-size:12px;color:#bbb;line-height:1.9;margin:0}
-.contact{
- background:#202020;border-radius:15px;padding:24px;
- text-align:center;line-height:2.4;border:1px solid #49402c;
+.card:hover{transform:translateY(-5px);border-color:var(--accent);box-shadow:var(--shadow)}
+.card-icon{font-size:32px}
+.card h3{font-size:16px;color:var(--accent);margin:13px 0 7px}
+.card p{font-size:12px;line-height:2;color:var(--muted);margin:0}
+.card-link{display:inline-block;color:var(--blue);font-size:12px;margin-top:13px;font-weight:700}
+.info-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.info-card{
+ background:var(--surface);border:1px solid var(--border);
+ border-radius:16px;padding:22px;
 }
-.contact a{color:#f1c34e;text-decoration:none}
+.info-card h3{margin-top:0;color:var(--accent);font-size:17px}
+.info-card p{color:var(--muted);font-size:13px;line-height:2}
+.notice{
+ border-right:3px solid var(--blue);
+ padding:12px 14px;background:var(--surface2);
+ border-radius:9px;margin-top:10px;font-size:13px;line-height:2;
+}
+.notice strong{display:block;color:var(--text)}
+.detail-panel{
+ display:none;margin-top:22px;padding:24px;
+ background:var(--surface);border:1px solid var(--accent);
+ border-radius:17px;scroll-margin-top:100px;
+}
+.detail-panel.active{display:block}
+.detail-panel h3{color:var(--accent);margin-top:0}
+.detail-panel p,.detail-panel li{color:var(--muted);line-height:2;font-size:13px}
+.detail-panel ul{padding-right:22px}
+.close-detail{float:left}
+.contact-box{
+ background:linear-gradient(135deg,var(--surface),var(--surface2));
+ border:1px solid var(--border);border-radius:18px;
+ padding:28px;text-align:center;line-height:2.4;
+}
+.contact-box a.phone{color:var(--accent);font-weight:700;direction:ltr;display:inline-block}
+.contact-buttons{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:15px}
 footer{
- text-align:center;padding:25px 12px;
- color:#999;border-top:1px solid #333;font-size:12px;
+ border-top:1px solid var(--border);padding:28px 10px;
+ text-align:center;color:var(--muted);font-size:12px;line-height:2.2;
 }
-
-/* GIGANET NEW VISUAL IDENTITY */
-
-:root {
-  --main-bg: #081426;
-  --card-bg: #10233d;
-  --blue: #39b9e8;
-  --turquoise: #38d6c4;
-  --main-text: #f3f8ff;
-  --muted-text: #a9bad0;
+footer strong{color:var(--accent)}
+.back-top{
+ position:fixed;bottom:18px;left:18px;z-index:50;
+ display:none;border:0;border-radius:50%;width:43px;height:43px;
+ background:var(--accent);color:#06252b;font-size:20px;
 }
-
-body {
-  background: var(--main-bg) !important;
-  color: var(--main-text);
+.back-top.show{display:block}
+.empty{padding:15px;text-align:center;color:var(--muted);font-size:13px}
+@media(max-width:850px){
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .nav-links{
+  display:none;position:absolute;top:75px;right:0;left:0;
+  background:var(--surface);padding:18px 5%;
+  border-bottom:1px solid var(--border);
+ }
+ .nav-links.open{display:flex;flex-direction:column;align-items:stretch;gap:15px}
+ .nav-links a{padding:5px}
+ .menu-btn{display:inline-block}
 }
-
-header {
-  background: linear-gradient(
-    135deg,
-    #10233d,
-    #075b83
-  ) !important;
-  border-bottom: 2px solid var(--turquoise) !important;
+@media(max-width:550px){
+ .hero{padding:55px 10px 40px}
+ .hero p{font-size:13px}
+ .grid{gap:10px}
+ .card{padding:17px 12px;min-height:175px}
+ .card h3{font-size:14px}
+ .card p{font-size:11px}
+ .section{padding:42px 0}
+ .info-grid{grid-template-columns:1fr}
+ .logo{font-size:23px}
 }
-
-.logo {
-  color: var(--turquoise) !important;
-}
-
-.hero {
-  background: radial-gradient(
-    circle at top,
-    #16436a,
-    #081426
-  ) !important;
-}
-
-.hero h1 {
-  color: var(--turquoise) !important;
-}
-
-.container h2 {
-  color: var(--blue) !important;
-}
-
-.card,
-.contact {
-  background: var(--card-bg) !important;
-  border: 1px solid #245477 !important;
-  border-radius: 18px !important;
-}
-
-.card h3 {
-  color: var(--turquoise) !important;
-}
-
-.card p,
-header p {
-  color: var(--muted-text) !important;
-}
-
-.card:hover {
-  border-color: var(--blue) !important;
-}
-
-.contact a {
-  color: var(--turquoise) !important;
-}
-
-footer {
-  border-top: 1px solid #245477 !important;
-  color: var(--muted-text) !important;
-}
- </style>
+</style>
 </head>
 
 <body>
 
 <header>
- <div class="logo">GIGANET</div>
- <p>مجموعه خدمات دیجیتال، کامپیوتر و دانشجویی</p>
+ <div class="container navbar">
+  <a href="#" class="logo">GIGANET<small>دنیای دیجیتال، یک قدم نزدیک‌تر</small></a>
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">صفحه اصلی</a>
+   <a href="#services">هفت محور اصلی</a>
+   <a href="#news">اخبار و اطلاعیه‌ها</a>
+   <a href="#academy">آموزش و ترفند</a>
+   <a href="#contact">ارتباط با ما</a>
+  </nav>
+  <div class="nav-actions">
+   <button class="icon-btn" id="themeBtn" aria-label="تغییر تم">☀️</button>
+   <button class="icon-btn menu-btn" id="menuBtn" aria-label="بازکردن منو">☰</button>
+  </div>
+ </div>
 </header>
 
-<section class="hero">
- <h1>به دنیای GIGANET خوش آمدید 🚀</h1>
+<main>
+<section class="hero" id="home">
+ <div class="eyebrow">مرکز خدمات و راهکارهای دیجیتال</div>
+ <h1>به دنیای <span>GIGANET</span> خوش آمدید</h1>
  <p>
- خدمات دیجیتال و کامپیوتری، امور دانشجویی،
- ثبت‌نام اینترنتی و سفارش کالا؛
- همه در یک مجموعه
+  از خدمات دیجیتال و امور دانشجویی تا فروش محصولات،
+  فناوری و آموزش؛ آنچه برای دنیای دیجیتال نیاز دارید،
+  در یک مجموعه.
  </p>
- <a class="btn" href="#services">مشاهده خدمات</a>
- <a class="btn red" href="#contact">ارتباط با ما</a>
+ <div class="hero-buttons">
+  <a href="#services" class="btn">مشاهده بخش‌ها ↓</a>
+  <a href="#contact" class="btn secondary">ارتباط با GIGANET</a>
+ </div>
+
+ <div class="search-wrap">
+  <div class="search-box">
+   <span>🔎</span>
+   <input id="serviceSearch" type="search"
+    placeholder="دنبال چه خدمت یا موضوعی هستید؟"
+    autocomplete="off" aria-label="جست‌وجو در خدمات">
+   <button class="icon-btn" id="clearSearch" aria-label="پاک کردن">✕</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+ </div>
 </section>
 
-<main class="container" id="services">
- <h2>خدمات و بخش‌های GIGANET</h2>
-
- <div class="grid">
-
-  <div class="card">
-   <div class="emoji">💻</div>
-   <h3>خدمات دیجیتال</h3>
-   <p>تایپ، پرینت، اسکن، کپی و امور اینترنتی</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">🎓</div>
-   <h3>ثبت‌نام و اخبار</h3>
-   <p>امور دانشجویی، ثبت‌نام‌ها و اطلاع‌رسانی</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">💳</div>
-   <h3>کارتخوان</h3>
-   <p>خرید، فروش و خدمات کارتخوان</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">🎧</div>
-   <h3>لوازم جانبی</h3>
-   <p>لوازم و تجهیزات دیجیتال</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">🎬</div>
-   <h3>فیلم و سریال</h3>
-   <p>بخش سرگرمی و CD CLUB</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">🖥️</div>
-   <h3>کامپیوتر و نرم‌افزار</h3>
-   <p>خدمات کامپیوتری و نرم‌افزاری</p>
-  </div>
-
-  <div class="card">
-   <div class="emoji">📦</div>
-   <h3>سفارش کالا</h3>
-   <p>ثبت درخواست و سفارش کالا</p>
-  </div>
-
+<section class="section container" id="services">
+ <div class="section-head">
+  <h2>هفت محور اصلی GIGANET</h2>
+  <p>برای ورود به هر بخش، کارت موردنظر را انتخاب کنید.</p>
  </div>
+
+ <div class="grid" id="serviceGrid">
+  <a class="card" href="#detail-1" data-open="1">
+   <div class="card-icon">💻</div>
+   <h3>خدمات دیجیتال و حضوری</h3>
+   <p>تایپ، چاپ، اسکن، کپی، امور اینترنتی و خدمات حضوری</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-2" data-open="2">
+   <div class="card-icon">🎓</div>
+   <h3>ثبت‌نام و امور دانشجویی</h3>
+   <p>ثبت‌نام، انتخاب واحد، پیگیری امور و اطلاعیه‌های دانشگاهی</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-3" data-open="3">
+   <div class="card-icon">💳</div>
+   <h3>کارتخوان و خدمات پرداخت</h3>
+   <p>خرید، فروش، انتقال مالکیت و خدمات دستگاه کارتخوان</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-4" data-open="4">
+   <div class="card-icon">🛍️</div>
+   <h3>فروشگاه محصولات</h3>
+   <p>محصولات دیجیتال، لوازم جانبی و ثبت درخواست خرید</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-5" data-open="5">
+   <div class="card-icon">🎬</div>
+   <h3>CD CLUB و سرگرمی</h3>
+   <p>دنیای فیلم، سریال و محتوای سرگرمی</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-6" data-open="6">
+   <div class="card-icon">🖥️</div>
+   <h3>کامپیوتر و نرم‌افزار</h3>
+   <p>ویندوز، نرم‌افزار، نصب، راه‌اندازی و پشتیبانی</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+  <a class="card" href="#detail-7" data-open="7">
+   <div class="card-icon">📚</div>
+   <h3>GIGANET ACADEMY</h3>
+   <p>آموزش فناوری، هوش مصنوعی، ترفندها و پرامپت‌ها</p>
+   <span class="card-link">مشاهده جزئیات ←</span>
+  </a>
+ </div>
+
+ <div class="detail-panel" id="detail-1">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>💻 خدمات دیجیتال و حضوری</h3>
+  <p>انجام خدمات دیجیتال و کامپیوتری با امکان مراجعه حضوری به مجموعه GIGANET.</p>
+  <ul>
+   <li>تایپ، ویرایش و تنظیم اسناد</li>
+   <li>پرینت، کپی و اسکن</li>
+   <li>خدمات اینترنتی و ثبت درخواست‌ها</li>
+   <li>ساخت و ویرایش فایل‌های Word، Excel و PowerPoint</li>
+   <li>خدمات دانشجویی نیازمند مراجعه حضوری</li>
+  </ul>
+  <a class="btn" href="#contact">درخواست خدمت</a>
+ </div>
+
+ <div class="detail-panel" id="detail-2">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>🎓 ثبت‌نام و امور دانشجویی</h3>
+  <p>مرجعی برای دسترسی به خدمات و اطلاعیه‌های مرتبط با دانشجویان و متقاضیان ثبت‌نام.</p>
+  <ul>
+   <li>ثبت‌نام و پیگیری امور دانشگاهی</li>
+   <li>انتخاب واحد و امور سامانه‌های دانشجویی</li>
+   <li>اطلاع‌رسانی اخبار و مهلت‌های دانشگاهی</li>
+   <li>آماده‌سازی و تنظیم فایل‌های دانشگاهی</li>
+  </ul>
+  <a class="btn" href="#news">مشاهده اطلاعیه‌ها</a>
+ </div>
+
+ <div class="detail-panel" id="detail-3">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>💳 کارتخوان و خدمات پرداخت</h3>
+  <p>خدمات مرتبط با دستگاه‌های کارتخوان و تجهیزات جانبی.</p>
+  <ul>
+   <li>مشاوره خرید و فروش کارتخوان</li>
+   <li>انتقال مالکیت و خدمات مرتبط</li>
+   <li>معرفی مدل‌ها و مشخصات دستگاه‌ها</li>
+   <li>باطری، شارژر و لوازم جانبی کارتخوان</li>
+  </ul>
+  <a class="btn" href="https://wa.me/989398156811">مشاوره در واتساپ</a>
+ </div>
+
+ <div class="detail-panel" id="detail-4">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>🛍️ فروشگاه محصولات</h3>
+  <p>معرفی محصولات و امکان ارسال درخواست برای تهیه کالا.</p>
+  <ul>
+   <li>لوازم جانبی موبایل و کامپیوتر</li>
+   <li>تجهیزات دیجیتال</li>
+   <li>محصولات و لوازم موردنیاز کاربران</li>
+   <li>ثبت درخواست استعلام موجودی و قیمت</li>
+  </ul>
+  <a class="btn" href="#contact">درخواست محصول</a>
+ </div>
+
+ <div class="detail-panel" id="detail-5">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>🎬 CD CLUB و سرگرمی</h3>
+  <p>بخش سرگرمی GIGANET برای علاقه‌مندان به فیلم، سریال و محتوای فرهنگی.</p>
+  <ul>
+   <li>معرفی فیلم و سریال</li>
+   <li>پیشنهادهای سرگرمی</li>
+   <li>معرفی آثار جدید و محبوب</li>
+   <li>مطالب و محتوای اختصاصی CD CLUB</li>
+  </ul>
+ </div>
+
+ <div class="detail-panel" id="detail-6">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>🖥️ کامپیوتر و نرم‌افزار</h3>
+  <p>خدمات و راهکارهای مرتبط با کامپیوتر، سیستم‌عامل و نرم‌افزار.</p>
+  <ul>
+   <li>نصب و راه‌اندازی ویندوز</li>
+   <li>نصب و معرفی نرم‌افزارها</li>
+   <li>رفع مشکلات عمومی کامپیوتر</li>
+   <li>آموزش و ترفندهای کاربردی</li>
+  </ul>
+  <a class="btn" href="#contact">درخواست پشتیبانی</a>
+ </div>
+
+ <div class="detail-panel" id="detail-7">
+  <button class="icon-btn close-detail" data-close>✕ بستن</button>
+  <h3>📚 GIGANET ACADEMY</h3>
+  <p>مرکز آموزش و یادگیری مهارت‌های دیجیتال و فناوری‌های نوین.</p>
+  <ul>
+   <li>آموزش هوش مصنوعی و ابزارهای آن</li>
+   <li>آموزش کامپیوتر و موبایل</li>
+   <li>ترفندهای کاربردی فناوری</li>
+   <li>پرامپت‌های آماده و کاربردی</li>
+   <li>آموزش نرم‌افزارها و مهارت‌های دیجیتال</li>
+  </ul>
+  <a class="btn" href="#academy">ورود به آموزش‌ها</a>
+ </div>
+</section>
+
+<section class="section container" id="news">
+ <div class="section-head">
+  <h2>اخبار و اطلاعیه‌ها</h2>
+  <p>بخش مستقل اطلاع‌رسانی رویدادها، ثبت‌نام‌ها و اخبار مهم</p>
+ </div>
+ <div class="info-grid">
+  <div class="info-card">
+   <h3>🎓 اطلاعیه‌های دانشگاهی</h3>
+   <p>اخبار انتخاب واحد، ثبت‌نام، مهلت‌ها و اطلاعیه‌های آموزشی در این قسمت منتشر خواهند شد.</p>
+   <div class="notice"><strong>بخش اطلاع‌رسانی</strong>منتظر انتشار اطلاعیه‌های تأییدشده باشید.</div>
+  </div>
+  <div class="info-card">
+   <h3>📢 اخبار و فرصت‌ها</h3>
+   <p>اطلاع‌رسانی درباره فرصت‌های ثبت‌نام، خدمات جدید و اخبار مجموعه GIGANET.</p>
+   <div class="notice"><strong>به‌روزرسانی اخبار</strong>اطلاعات این قسمت در نسخه فعلی نمونه است و هنوز پنل انتشار ندارد.</div>
+  </div>
+ </div>
+</section>
+
+<section class="section container" id="academy">
+ <div class="section-head">
+  <h2>GIGANET ACADEMY</h2>
+  <p>یادگیری، تجربه و حرکت در دنیای فناوری</p>
+ </div>
+ <div class="grid">
+  <div class="card">
+   <div class="card-icon">🤖</div>
+   <h3>هوش مصنوعی</h3>
+   <p>آشنایی با ابزارهای هوش مصنوعی و کاربردهای روزمره آن‌ها.</p>
+  </div>
+  <div class="card">
+   <div class="card-icon">📱</div>
+   <h3>موبایل و اپلیکیشن</h3>
+   <p>آموزش قابلیت‌ها، تنظیمات و ترفندهای کاربردی موبایل.</p>
+  </div>
+  <div class="card">
+   <div class="card-icon">⌨️</div>
+   <h3>کامپیوتر و نرم‌افزار</h3>
+   <p>مهارت‌های کاربردی ویندوز و نرم‌افزارهای پرمصرف.</p>
+  </div>
+  <div class="card">
+   <div class="card-icon">✨</div>
+   <h3>پرامپت و ترفند روز</h3>
+   <p>ایده‌ها و دستورهای آماده برای استفاده بهتر از فناوری.</p>
+  </div>
+ </div>
+</section>
+
+<section class="section container" id="contact">
+ <div class="section-head">
+  <h2>ارتباط با GIGANET</h2>
+  <p>برای دریافت راهنمایی و ثبت درخواست با ما در ارتباط باشید.</p>
+ </div>
+ <div class="contact-box">
+  <div>📍 سوسنگرد، روبروی دانشگاه آزاد اسلامی</div>
+  <div>📞 دحیماوی: <a class="phone" href="tel:09398156811">09398156811</a></div>
+  <div>📞 نیسی: <a class="phone" href="tel:09028616359">09028616359</a></div>
+  <div class="contact-buttons">
+   <a class="btn" href="https://wa.me/989398156811">واتساپ دحیماوی</a>
+   <a class="btn secondary" href="https://wa.me/989028616359">واتساپ نیسی</a>
+  </div>
+ </div>
+</section>
 </main>
 
-<section class="container" id="contact">
- <h2>ارتباط با GIGANET</h2>
-
- <div class="contact">
-  <p>📍 سوسنگرد، روبروی دانشگاه آزاد اسلامی</p>
-
-  <p>
-   📞 دحیماوی:
-   <a href="tel:09398156811">09398156811</a>
-  </p>
-
-  <p>
-   📞 نیسی:
-   <a href="tel:09028616359">09028616359</a>
-  </p>
-
-  <a class="btn" href="https://wa.me/989398156811">
-   ارتباط در واتساپ
-  </a>
-
-  <a class="btn red" href="https://wa.me/989028616359">
-   واتساپ نیسی
-  </a>
- </div>
-</section>
-
 <footer>
- <div>GIGANET</div>
- <p>دنیای دیجیتال، یک قدم نزدیک‌تر</p>
- <p>© 2026 GIGANET - All Rights Reserved</p>
+ <strong>GIGANET</strong>
+ <div>دنیای دیجیتال، یک قدم نزدیک‌تر</div>
+ <div>سوسنگرد، روبروی دانشگاه آزاد اسلامی</div>
+ <div>© 2026 GIGANET - All Rights Reserved</div>
 </footer>
 
+<button class="back-top" id="backTop" aria-label="بازگشت به بالا">↑</button>
 
 <script>
-(function () {
-  const style = document.createElement('style');
+(function(){
+ const body=document.body;
+ const themeBtn=document.getElementById('themeBtn');
+ const menuBtn=document.getElementById('menuBtn');
+ const navLinks=document.getElementById('navLinks');
+ const search=document.getElementById('serviceSearch');
+ const results=document.getElementById('searchResults');
+ const clearSearch=document.getElementById('clearSearch');
+ const backTop=document.getElementById('backTop');
 
-  style.textContent = `
-    body { transition: background .3s, color .3s; }
+ // Theme
+ function setTheme(theme){
+  body.classList.toggle('light',theme==='light');
+  themeBtn.textContent=theme==='light'?'🌙':'☀️';
+  document.querySelector('meta[name="theme-color"]').content=
+   theme==='light'?'#f3f6fb':'#081426';
+ }
+ const savedTheme=localStorage.getItem('giganet-theme');
+ setTheme(savedTheme || (matchMedia('(prefers-color-scheme: light)').matches?'light':'dark'));
 
-    body.light {
-      background: #f4f6fa !important;
-      color: #202938 !important;
-    }
+ themeBtn.addEventListener('click',()=>{
+  const next=body.classList.contains('light')?'dark':'light';
+  localStorage.setItem('giganet-theme',next);
+  setTheme(next);
+ });
 
-    body.light header {
-      background: linear-gradient(135deg,#ffffff,#e8edf5);
-    }
-
-    body.light header p { color: #555; }
-
-    body.light .hero {
-      background: radial-gradient(circle at top,#fff1c9,#edf1f7 65%);
-    }
-
-    body.light .hero p { color: #333; }
-
-    body.light .card,
-    body.light .contact {
-      background: #fff;
-      border-color: #d7deea;
-    }
-
-    body.light .card p { color: #555; }
-
-    body.light footer {
-      color: #555;
-      border-color: #ddd;
-    }
-
-    body.light h2 { color: #a7770d; }
-  `;
-
-  document.head.appendChild(style);
-
-  const button = document.createElement('button');
-  button.type = 'button';
-  button.style.cssText =
-    'margin-top:15px;padding:10px 18px;border-radius:10px;border:1px solid #d5a62e;background:transparent;color:inherit;font-family:inherit;font-weight:bold;cursor:pointer;';
-
-  document.querySelector('header').appendChild(button);
-
-  function applyTheme(theme) {
-    document.body.classList.toggle('light', theme === 'light');
-
-    button.textContent =
-      theme === 'light' ? '🌙 حالت شب' : '☀️ حالت روز';
-
-    document.querySelector(
-      'meta[name="theme-color"]'
-    ).content = theme === 'light' ? '#f4f6fa' : '#101010';
-  }
-
-  const saved = localStorage.getItem('giganet-theme');
-  const hour = new Date().getHours();
-
-  applyTheme(saved || (hour >= 6 && hour < 18 ? 'light' : 'dark'));
-
-  button.addEventListener('click', function () {
-    const next = document.body.classList.contains('light')
-      ? 'dark' : 'light';
-
-    localStorage.setItem('giganet-theme', next);
-    applyTheme(next);
+ // Mobile menu
+ menuBtn.addEventListener('click',()=>{
+  navLinks.classList.toggle('open');
+  menuBtn.textContent=navLinks.classList.contains('open')?'✕':'☰';
+ });
+ navLinks.querySelectorAll('a').forEach(link=>{
+  link.addEventListener('click',()=>{
+   navLinks.classList.remove('open');
+   menuBtn.textContent='☰';
   });
+ });
+
+ // Section details
+ function openDetail(id){
+  document.querySelectorAll('.detail-panel').forEach(panel=>{
+   panel.classList.remove('active');
+  });
+  const panel=document.getElementById('detail-'+id);
+  if(panel){
+   panel.classList.add('active');
+   panel.scrollIntoView({behavior:'smooth',block:'nearest'});
+  }
+ }
+ document.querySelectorAll('[data-open]').forEach(card=>{
+  card.addEventListener('click',event=>{
+   event.preventDefault();
+   openDetail(card.dataset.open);
+  });
+ });
+ document.querySelectorAll('[data-close]').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+   btn.closest('.detail-panel').classList.remove('active');
+  });
+ });
+
+ // Search index
+ const searchData=[
+  {name:'تایپ و ویرایش اسناد',category:'خدمات دیجیتال',id:1,words:'تایپ word نگارش ویرایش'},
+  {name:'پرینت، چاپ و کپی',category:'خدمات دیجیتال',id:1,words:'چاپ پرینت کپی'},
+  {name:'اسکن مدارک',category:'خدمات دیجیتال',id:1,words:'اسکن مدارک'},
+  {name:'خدمات اینترنتی',category:'خدمات دیجیتال',id:1,words:'اینترنت ثبت درخواست'},
+  {name:'امور دانشجویی',category:'ثبت‌نام و امور دانشجویی',id:2,words:'دانشگاه دانشجو'},
+  {name:'انتخاب واحد',category:'ثبت‌نام و امور دانشجویی',id:2,words:'پیام نور انتخاب واحد'},
+  {name:'اخبار دانشگاهی',category:'ثبت‌نام و امور دانشجویی',id:2,words:'اطلاعیه دانشگاه خبر'},
+  {name:'خدمات کارتخوان',category:'کارتخوان و پرداخت',id:3,words:'پوز کارتخوان دستگاه'},
+  {name:'انتقال مالکیت کارتخوان',category:'کارتخوان و پرداخت',id:3,words:'مالکیت انتقال'},
+  {name:'باطری و شارژر کارتخوان',category:'کارتخوان و پرداخت',id:3,words:'باتری باطری شارژر'},
+  {name:'لوازم جانبی',category:'فروشگاه محصولات',id:4,words:'کابل هدفون شارژر لوازم'},
+  {name:'سفارش محصولات',category:'فروشگاه محصولات',id:4,words:'خرید سفارش کالا محصول'},
+  {name:'فیلم و سریال',category:'CD CLUB و سرگرمی',id:5,words:'فیلم سینما سریال سرگرمی'},
+  {name:'CD CLUB',category:'CD CLUB و سرگرمی',id:5,words:'سی دی کلوپ'},
+  {name:'نصب ویندوز',category:'کامپیوتر و نرم‌افزار',id:6,words:'ویندوز نصب سیستم عامل'},
+  {name:'نصب نرم‌افزار',category:'کامپیوتر و نرم‌افزار',id:6,words:'برنامه نرم افزار'},
+  {name:'هوش مصنوعی',category:'GIGANET ACADEMY',id:7,words:'ai آموزش هوش مصنوعی'},
+  {name:'ترفندهای موبایل',category:'GIGANET ACADEMY',id:7,words:'گوشی اندروید موبایل'},
+  {name:'پرامپت‌های آماده',category:'GIGANET ACADEMY',id:7,words:'پرامپت دستور آماده'},
+  {name:'آموزش کامپیوتر',category:'GIGANET ACADEMY',id:7,words:'یادگیری آموزش رایانه'}
+ ];
+
+ function normalize(value){
+  return value.toLowerCase()
+   .replace(/[يى]/g,'ی').replace(/ك/g,'ک')
+   .replace(/[\u064B-\u065F]/g,'').trim();
+ }
+
+ function renderSearch(value){
+  const query=normalize(value);
+  results.innerHTML='';
+  if(!query){results.classList.remove('show');return;}
+  const matches=searchData.filter(item=>
+   normalize(item.name+' '+item.category+' '+item.words).includes(query)
+  ).slice(0,8);
+
+  if(!matches.length){
+   results.innerHTML='<div class="empty">موردی پیدا نشد. عبارت دیگری را امتحان کنید.</div>';
+  }else{
+   matches.forEach(item=>{
+    const button=document.createElement('button');
+    button.type='button';
+    button.className='search-item';
+    const title=document.createElement('span');
+    title.textContent=item.name;
+    const category=document.createElement('small');
+    category.textContent=item.category;
+    button.append(title,category);
+    button.addEventListener('click',()=>{
+     openDetail(item.id);
+     results.classList.remove('show');
+     search.value='';
+    });
+    results.appendChild(button);
+   });
+  }
+  results.classList.add('show');
+ }
+ search.addEventListener('input',()=>renderSearch(search.value));
+ clearSearch.addEventListener('click',()=>{
+  search.value='';
+  results.classList.remove('show');
+  search.focus();
+ });
+ document.addEventListener('click',event=>{
+  if(!event.target.closest('.search-wrap'))results.classList.remove('show');
+ });
+ search.addEventListener('keydown',event=>{
+  if(event.key==='Escape')results.classList.remove('show');
+ });
+
+ // Back to top
+ window.addEventListener('scroll',()=>{
+  backTop.classList.toggle('show',window.scrollY>450);
+ });
+ backTop.addEventListener('click',()=>{
+  window.scrollTo({top:0,behavior:'smooth'});
+ });
 })();
 </script>
- 
 </body>
 </html>
