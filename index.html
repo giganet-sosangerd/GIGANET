@@ -59,7 +59,81 @@ footer{
  text-align:center;padding:25px 12px;
  color:#999;border-top:1px solid #333;font-size:12px;
 }
-</style>
+
+/* GIGANET NEW VISUAL IDENTITY */
+
+:root {
+  --main-bg: #081426;
+  --card-bg: #10233d;
+  --blue: #39b9e8;
+  --turquoise: #38d6c4;
+  --main-text: #f3f8ff;
+  --muted-text: #a9bad0;
+}
+
+body {
+  background: var(--main-bg) !important;
+  color: var(--main-text);
+}
+
+header {
+  background: linear-gradient(
+    135deg,
+    #10233d,
+    #075b83
+  ) !important;
+  border-bottom: 2px solid var(--turquoise) !important;
+}
+
+.logo {
+  color: var(--turquoise) !important;
+}
+
+.hero {
+  background: radial-gradient(
+    circle at top,
+    #16436a,
+    #081426
+  ) !important;
+}
+
+.hero h1 {
+  color: var(--turquoise) !important;
+}
+
+.container h2 {
+  color: var(--blue) !important;
+}
+
+.card,
+.contact {
+  background: var(--card-bg) !important;
+  border: 1px solid #245477 !important;
+  border-radius: 18px !important;
+}
+
+.card h3 {
+  color: var(--turquoise) !important;
+}
+
+.card p,
+header p {
+  color: var(--muted-text) !important;
+}
+
+.card:hover {
+  border-color: var(--blue) !important;
+}
+
+.contact a {
+  color: var(--turquoise) !important;
+}
+
+footer {
+  border-top: 1px solid #245477 !important;
+  color: var(--muted-text) !important;
+}
+ </style>
 </head>
 
 <body>
