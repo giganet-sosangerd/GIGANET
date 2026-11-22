@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101010">
+<meta name="description" content="خدمات دیجیتال و حضوری GIGANET؛ انجام امور کامپیوتری، اینترنتی، اداری و دانشجویی در سوسنگرد.">
+<title>خدمات دیجیتال و حضوری | GIGANET</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0e13;
+  --surface:#141a23;
+  --surface2:#1b2430;
+  --text:#f4f6fa;
+  --muted:#a7b0bd;
+  --accent:#36a3ff;
+  --accent2:#00d5b0;
+  --border:rgba(255,255,255,.09);
+  --shadow:0 15px 40px rgba(0,0,0,.22);
+}
+body.light{
+  --bg:#f3f6fa;
+  --surface:#ffffff;
+  --surface2:#edf2f8;
+  --text:#17202d;
+  --muted:#667386;
+  --accent:#087bd5;
+  --accent2:#009d83;
+  --border:rgba(20,35,55,.12);
+  --shadow:0 12px 32px rgba(20,40,70,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Vazirmatn',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.9;
+  transition:.25s;
+}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit}
+.container{width:min(1100px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:10;
+  background:color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  min-height:72px;display:flex;
+  align-items:center;justify-content:space-between;
+  gap:12px;
+}
+.brand{font-size:23px;font-weight:900;letter-spacing:1px}
+.brand span{color:var(--accent)}
+.nav-actions{display:flex;gap:9px;align-items:center}
+.nav-btn{
+  border:1px solid var(--border);
+  background:var(--surface);
+  color:var(--text);
+  padding:8px 13px;border-radius:12px;
+  cursor:pointer;font-size:13px;
+}
+.hero{
+  position:relative;overflow:hidden;
+  padding:65px 0 55px;
+  background:
+  radial-gradient(circle at 85% 20%,rgba(54,163,255,.16),transparent 35%),
+  radial-gradient(circle at 10% 90%,rgba(0,213,176,.10),transparent 30%);
+}
+.hero-content{
+  display:grid;grid-template-columns:1.3fr .7fr;
+  align-items:center;gap:35px;
+}
+.eyebrow{
+  display:inline-block;color:var(--accent2);
+  background:rgba(0,213,176,.09);
+  border:1px solid rgba(0,213,176,.2);
+  padding:5px 13px;border-radius:30px;
+  font-size:12px;font-weight:700;
+}
+h1{font-size:clamp(28px,5vw,47px);line-height:1.5;margin:17px 0 12px}
+h1 span{color:var(--accent)}
+.hero p{color:var(--muted);max-width:620px;margin:0}
+.hero-icon{
+  width:210px;height:210px;margin:auto;
+  display:grid;place-items:center;
+  border:1px solid rgba(54,163,255,.3);
+  border-radius:40px;
+  background:linear-gradient(145deg,rgba(54,163,255,.15),rgba(0,213,176,.08));
+  box-shadow:var(--shadow);
+  transform:rotate(-4deg);
+}
+.hero-icon svg{width:125px;height:125px;transform:rotate(4deg)}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:11px 19px;border-radius:12px;
+  font-size:14px;font-weight:700;
+}
+.primary{background:var(--accent);color:white}
+.secondary{border:1px solid var(--border);background:var(--surface)}
+section{padding:48px 0}
+.section-title{margin-bottom:25px}
+.section-title h2{font-size:24px;margin:0 0 5px}
+.section-title p{color:var(--muted);font-size:14px;margin:0}
+.intro{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:20px;padding:23px;
+  box-shadow:var(--shadow);
+}
+.intro p{color:var(--muted);margin:7px 0}
+.services{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
+}
+.service{
+  padding:20px;background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:17px;transition:.2s;
+}
+.service:hover{transform:translateY(-4px);border-color:var(--accent)}
+.service-icon{
+  width:45px;height:45px;border-radius:13px;
+  display:grid;place-items:center;
+  background:rgba(54,163,255,.12);
+  color:var(--accent);font-size:22px;
+}
+.service h3{font-size:16px;margin:12px 0 5px}
+.service p{font-size:13px;color:var(--muted);margin:0}
+.notice{
+  margin-top:22px;padding:17px 20px;
+  border-radius:15px;
+  background:rgba(0,213,176,.07);
+  border:1px solid rgba(0,213,176,.2);
+  color:var(--muted);font-size:13px;
+}
+.notice strong{color:var(--accent2)}
+.contact{
+  background:linear-gradient(135deg,rgba(54,163,255,.13),rgba(0,213,176,.08));
+  border:1px solid var(--border);
+  border-radius:22px;padding:28px;
+}
+.contact-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:15px;
+  margin-top:18px;
+}
+.contact-item{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;padding:15px;
+}
+.contact-item small{display:block;color:var(--muted);font-size:12px}
+.contact-item strong{font-size:16px;direction:ltr;display:inline-block}
+.address{margin-top:15px;color:var(--muted);font-size:14px}
+footer{
+  padding:25px 0;text-align:center;
+  border-top:1px solid var(--border);
+  color:var(--muted);font-size:12px;
+}
+footer strong{color:var(--accent)}
+@media(max-width:750px){
+  .hero{padding:43px 0}
+  .hero-content{grid-template-columns:1fr;text-align:center}
+  .hero p{margin:auto}
+  .hero-icon{width:155px;height:155px;grid-row:1}
+  .hero-icon svg{width:95px;height:95px}
+  .actions{justify-content:center}
+  .services{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:430px){
+  .services{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .brand{font-size:20px}
+  .nav-btn{padding:7px 9px}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">GIGA<span>NET</span></a>
+    <div class="nav-actions">
+      <a class="nav-btn" href="index.html">⌂ صفحه اصلی</a>
+      <button class="nav-btn" id="themeBtn" aria-label="تغییر پوسته">☀️</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container hero-content">
+      <div>
+        <span class="eyebrow">بخش اول از هفت محور اصلی GIGANET</span>
+        <h1>خدمات دیجیتال <span>و حضوری</span></h1>
+        <p>
+          این بخش برای انجام کارهای روزمره دیجیتال، کامپیوتری،
+          اداری و اینترنتی ایجاد شده است؛ از تایپ و چاپ اسناد
+          تا خدماتی که برای انجام آن‌ها به مراجعه حضوری نیاز دارید.
+          هدف ما ساده‌تر کردن کارهای شماست.
+        </p>
+        <div class="actions">
+          <a class="btn primary" href="#services">مشاهده خدمات</a>
+          <a class="btn secondary" href="#contact">ارتباط با GIGANET</a>
+        </div>
+      </div>
+
+      <div class="hero-icon">
+        <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="17" y="24" width="126" height="86" rx="12" stroke="#36a3ff" stroke-width="6"/>
+          <path d="M58 135H102M80 110V135" stroke="#00d5b0" stroke-width="7" stroke-linecap="round"/>
+          <path d="M47 52H91M47 69H112M47 86H83" stroke="#36a3ff" stroke-width="6" stroke-linecap="round"/>
+          <circle cx="119" cy="105" r="22" fill="#0b0e13" stroke="#00d5b0" stroke-width="5"/>
+          <path d="M109 105L116 112L130 96" stroke="#00d5b0" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>این بخش چه کاری انجام می‌دهد؟</h2>
+        <p>یک مسیر ساده برای دسترسی به خدمات کاربردی روزمره</p>
+      </div>
+      <div class="intro">
+        <p>
+          در GIGANET تلاش می‌کنیم امور دیجیتال و کامپیوتری شما
+          با دقت و سرعت انجام شود. این صفحه راهنمای خدماتی است
+          که می‌توانید برای دریافت آن‌ها به مجموعه مراجعه کنید.
+        </p>
+        <p>
+          چه یک سند برای تایپ و چاپ داشته باشید، چه به اسکن،
+          تنظیم فایل یا انجام امور اینترنتی نیاز پیدا کنید،
+          می‌توانید از خدمات این بخش استفاده کنید.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-title">
+        <h2>خدمات این بخش</h2>
+        <p>خدمات دیجیتال، کامپیوتری و حضوری GIGANET</p>
+      </div>
+
+      <div class="services">
+        <article class="service">
+          <div class="service-icon">⌨️</div>
+          <h3>تایپ و تنظیم اسناد</h3>
+          <p>تایپ متون، تنظیم و صفحه‌آرایی اسناد و آماده‌سازی فایل‌های متنی.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🖨️</div>
+          <h3>چاپ و پرینت</h3>
+          <p>چاپ اسناد، جزوه‌ها، فایل‌های متنی و مدارک موردنیاز.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">📄</div>
+          <h3>کپی و اسکن</h3>
+          <p>کپی مدارک و تبدیل اسناد کاغذی به فایل دیجیتال.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">📊</div>
+          <h3>فایل‌های اداری و دانشگاهی</h3>
+          <p>کار با Word، Excel و PowerPoint و آماده‌سازی فایل‌های موردنیاز.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🌐</div>
+          <h3>خدمات اینترنتی</h3>
+          <p>انجام امور اینترنتی و راهنمایی برای استفاده از سامانه‌های آنلاین.</p>
+        </article>
+
+        <article class="service">
+          <div class="service-icon">🎓</div>
+          <h3>امور اداری و دانشجویی حضوری</h3>
+          <p>کمک در انجام امور و فرایندهایی که نیازمند مراجعه و پیگیری حضوری هستند.</p>
+        </article>
+      </div>
+
+      <div class="notice">
+        <strong>نکته مهم:</strong>
+        برای خدماتی که به مدارک، اطلاعات شخصی یا شرایط خاص نیاز دارند،
+        بهتر است پیش از مراجعه درباره مدارک لازم و جزئیات کار هماهنگ کنید.
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="section-title">
+          <h2>برای انجام کارهایتان کنار شما هستیم</h2>
+          <p>برای پرسش، هماهنگی یا مراجعه حضوری با ما در ارتباط باشید.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <small>دحیماوی</small>
+            <a href="tel:09398156811"><strong>09398156811</strong></a>
+          </div>
+          <div class="contact-item">
+            <small>نیسی</small>
+            <a href="tel:09028616359"><strong>09028616359</strong></a>
+          </div>
+        </div>
+
+        <div class="address">
+          📍 نشانی: سوسنگرد، روبروی دانشگاه آزاد اسلامی
+        </div>
+
+        <div class="actions">
+          <a class="btn primary" href="https://wa.me/989398156811" target="_blank" rel="noopener">ارتباط در واتساپ</a>
+          <a class="btn secondary" href="index.html">بازگشت به صفحه اصلی</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>GIGANET</strong> | مجموعه خدمات دیجیتال، کامپیوتری و دانشجویی
+    <br>
+    © 2026 GIGANET - All Rights Reserved
+  </div>
+</footer>
+
+<script>
+const themeBtn=document.getElementById('themeBtn');
+
+function applyTheme(theme){
+  document.body.classList.toggle('light',theme==='light');
+  themeBtn.textContent=theme==='light'?'🌙':'☀️';
+}
+
+let savedTheme=localStorage.getItem('giganet-theme')||'dark';
+applyTheme(savedTheme);
+
+themeBtn.addEventListener('click',()=>{
+  savedTheme=document.body.classList.contains('light')?'dark':'light';
+  localStorage.setItem('giganet-theme',savedTheme);
+  applyTheme(savedTheme);
+});
+</script>
+</body>
+</html>
