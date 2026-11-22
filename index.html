@@ -252,7 +252,7 @@ footer strong{color:var(--accent)}
  </div>
 
  <div class="grid" id="serviceGrid">
-  <a class="card" href="#detail-1" data-open="1">
+  <a class="card" href="digital-services.html">
    <div class="card-icon">💻</div>
    <h3>خدمات دیجیتال و حضوری</h3>
    <p>تایپ، چاپ، اسکن، کپی، امور اینترنتی و خدمات حضوری</p>
@@ -576,7 +576,11 @@ footer strong{color:var(--accent)}
     category.textContent=item.category;
     button.append(title,category);
     button.addEventListener('click',()=>{
-     openDetail(item.id);
+     if(item.id===1){
+ window.location.href='digital-services.html';
+ return;
+}
+openDetail(item.id);
      results.classList.remove('show');
      search.value='';
     });
