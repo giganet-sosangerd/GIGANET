@@ -254,6 +254,26 @@ footer strong{color:var(--accent)}
         <p>خدمات دیجیتال، کامپیوتری و حضوری GIGANET</p>
       </div>
 
+<div class="service-tools">
+
+  <input
+    type="search"
+    id="serviceSearch"
+    placeholder="🔍 جست‌وجو در خدمات..."
+    aria-label="جست‌وجو در خدمات"
+  >
+
+  <div class="service-filters">
+    <button type="button" class="filter-btn active" data-filter="all">همه خدمات</button>
+    <button type="button" class="filter-btn" data-filter="office">اداری و کامپیوتری</button>
+    <button type="button" class="filter-btn" data-filter="print">چاپ و پرینت</button>
+    <button type="button" class="filter-btn" data-filter="scan">کپی و اسکن</button>
+    <button type="button" class="filter-btn" data-filter="internet">خدمات اینترنتی</button>
+    <button type="button" class="filter-btn" data-filter="student">امور دانشجویی</button>
+  </div>
+
+</div>
+
       <div class="services" id="servicesGrid">
         <article class="service" data-category="office software">
           <div class="service-icon">⌨️</div>
@@ -267,25 +287,29 @@ footer strong{color:var(--accent)}
           <p>چاپ اسناد، جزوه‌ها، فایل‌های متنی و مدارک موردنیاز.</p>
         </article>
 
-        <article class="service">
+        <article class="service" 
+          data-category="scan">
           <div class="service-icon">📄</div>
           <h3>کپی و اسکن</h3>
           <p>کپی مدارک و تبدیل اسناد کاغذی به فایل دیجیتال.</p>
         </article>
 
-        <article class="service">
+        <article class="service" 
+          data-category="office">
           <div class="service-icon">📊</div>
           <h3>فایل‌های اداری و دانشگاهی</h3>
           <p>کار با Word، Excel و PowerPoint و آماده‌سازی فایل‌های موردنیاز.</p>
         </article>
 
-        <article class="service">
+        <article class="service"
+          data-category="internet">
           <div class="service-icon">🌐</div>
           <h3>خدمات اینترنتی</h3>
           <p>انجام امور اینترنتی و راهنمایی برای استفاده از سامانه‌های آنلاین.</p>
         </article>
 
-        <article class="service">
+        <article class="service"
+          data-category="student">
           <div class="service-icon">🎓</div>
           <h3>امور اداری و دانشجویی حضوری</h3>
           <p>کمک در انجام امور و فرایندهایی که نیازمند مراجعه و پیگیری حضوری هستند.</p>
