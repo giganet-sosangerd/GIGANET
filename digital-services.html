@@ -119,6 +119,67 @@ section{padding:48px 0}
   box-shadow:var(--shadow);
 }
 .intro p{color:var(--muted);margin:7px 0}
+  
+/* ابزار جست‌وجو و فیلتر خدمات */
+.service-tools{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  margin-bottom:22px;
+}
+
+#serviceSearch{
+  width:100%;
+  padding:14px 18px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:var(--surface);
+  color:var(--text);
+  font-family:inherit;
+  font-size:14px;
+  outline:none;
+  transition:.2s;
+}
+
+#serviceSearch::placeholder{
+  color:var(--muted);
+}
+
+#serviceSearch:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(54,163,255,.12);
+}
+
+.service-filters{
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.filter-btn{
+  padding:9px 15px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  color:var(--text);
+  font-family:inherit;
+  font-size:13px;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.filter-btn:hover{
+  border-color:var(--accent);
+  color:var(--accent);
+}
+
+.filter-btn.active{
+  background:var(--accent);
+  border-color:var(--accent);
+  color:#fff;
+  font-weight:700;
+}
+
 .services{
   display:grid;grid-template-columns:repeat(3,1fr);gap:15px;
 }
