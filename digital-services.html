@@ -441,6 +441,66 @@ themeBtn.addEventListener('click',()=>{
   localStorage.setItem('giganet-theme',savedTheme);
   applyTheme(savedTheme);
 });
+
+const serviceSearch = document.getElementById('serviceSearch');
+const serviceGrid = document.getElementById('servicesGrid');
+const serviceCards = serviceGrid.querySelectorAll('.service');
+const filterButtons = document.querySelectorAll('.filter-btn');
+
+let activeFilter = 'all';
+
+// پیام زمانی که نتیجه‌ای پیدا نشود
+const noResultsMessage = document.createElement('p');
+noResultsMessage.textContent = 'نتیجه‌ای برای جست‌وجوی شما پیدا نشد.';
+noResultsMessage.style.cssText =
+  'display:none;text-align:center;color:var(--muted);padding:20px;';
+
+serviceGrid.insertAdjacentElement('afterend', noResultsMessage);
+
+// بررسی و نمایش کارت‌های خدمات
+function filterServices() {
+  const searchText = serviceSearch.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  serviceCards.forEach(card => {
+    const categories = (card.dataset.category || '').split(/\s+/);
+    const matchesCategory =
+      activeFilter === 'all' || categories.includes(activeFilter);
+
+    const matchesSearch =
+      card.textContent.toLowerCase().includes(searchText);
+
+    const shouldShow = matchesCategory && matchesSearch;
+
+    card.style.display = shouldShow ? '' : 'none';
+
+    if (shouldShow) {
+      visibleCount++;
+    }
+  });
+
+  noResultsMessage.style.display =
+    visibleCount === 0 ? 'block' : 'none';
+}
+
+// جست‌وجو هنگام تایپ
+serviceSearch.addEventListener('input', filterServices);
+
+// فیلتر با دکمه‌ها
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    activeFilter = button.dataset.filter;
+
+    filterButtons.forEach(btn => {
+      btn.classList.remove('active');
+    });
+
+    button.classList.add('active');
+
+    filterServices();
+  });
+});
+  
 </script>
 </body>
 </html>
