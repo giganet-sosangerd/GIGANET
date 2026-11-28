@@ -1,31 +1,317 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="راهنمای نهضت ملی مسکن GIGANET">
+<meta name="description" content="راهنمای طرح‌های مسکن و استعلام مالکیت در GIGANET">
 <title>راهنمای نهضت ملی مسکن | GIGANET</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{font-family:Tahoma,Arial,sans-serif;background:#080d18;color:#f4f7ff;line-height:1.9}a{color:inherit;text-decoration:none}.container{width:92%;max-width:1100px;margin:auto}header{background:#101a2c;border-bottom:1px solid #263750;padding:18px 0}.header-content{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}.logo{color:#35d9ff;font-size:25px;font-weight:bold;letter-spacing:1px}.back-link{background:#1b2b43;border:1px solid #344d6c;padding:8px 16px;border-radius:10px;font-size:13px}.hero{text-align:center;padding:55px 0 35px}.hero h1{color:#35d9ff;font-size:clamp(25px,5vw,38px);margin-bottom:12px}.hero p{color:#b8c6da;max-width:750px;margin:auto;font-size:15px}.notice{background:#13243a;border:1px solid #24496a;border-right:4px solid #35d9ff;border-radius:12px;padding:15px 18px;margin:25px auto;color:#d8eaff;font-size:14px}.section-heading{margin:35px 0 20px;font-size:22px;color:#35d9ff}.guide-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-bottom:35px}.guide-card,.guide-content{background:#111c2e;border:1px solid #263750;border-radius:16px;padding:22px}.guide-card{transition:.25s}.guide-card:hover{border-color:#35d9ff;transform:translateY(-3px)}.guide-card h3{color:#35d9ff;font-size:18px;margin-bottom:10px}.guide-card p{color:#c0cde0;font-size:13px;margin-bottom:12px}.guide-link{display:inline-block;background:#35d9ff;color:#07111d;font-weight:bold;padding:8px 14px;border-radius:9px;font-size:13px;margin-top:8px}.guide-content{margin-bottom:20px;scroll-margin-top:20px}.guide-content h2{color:#35d9ff;font-size:20px;margin-bottom:12px}.guide-content h3{color:#e7f6ff;font-size:16px;margin:17px 0 8px}.guide-content p,.guide-content li{color:#c0cde0;font-size:14px}.guide-content ul,.guide-content ol{padding-right:22px;margin:7px 0 12px}.guide-content li{margin-bottom:5px}.subcard{background:#0c1626;border:1px solid #263750;border-radius:12px;padding:16px;margin-top:14px}.info-label{color:#35d9ff;font-weight:bold}.warning{background:#2a2115;border:1px solid #72542a;border-right:4px solid #e8ad47;color:#f5d9a3;border-radius:10px;padding:12px 15px;margin-top:12px;font-size:13px}.status{display:inline-block;background:#332719;border:1px solid #76562b;color:#ffd58a;padding:4px 10px;border-radius:20px;font-size:12px;margin-bottom:8px}.amount-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:15px 0}.amount{background:#0c1626;border:1px solid #263750;border-radius:11px;padding:13px;text-align:center}.amount strong{display:block;color:#35d9ff;font-size:19px}.amount span{color:#c0cde0;font-size:12px}footer{border-top:1px solid #263750;background:#101a2c;text-align:center;padding:25px 15px;color:#aab9ce;font-size:13px;margin-top:40px}footer strong{color:#35d9ff}@media(max-width:600px){.hero{padding-top:35px}.guide-card,.guide-content{padding:18px}}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Tahoma, Arial, sans-serif;
+    background: #080d18;
+    color: #f4f7ff;
+    line-height: 1.9;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    background: #101a2c;
+    border-bottom: 1px solid #263750;
+    padding: 18px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    color: #35d9ff;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.back-link {
+    background: #1b2b43;
+    border: 1px solid #344d6c;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+/* Hero */
+
+.hero {
+    text-align: center;
+    padding: 55px 0 35px;
+}
+
+.hero h1 {
+    color: #35d9ff;
+    font-size: clamp(25px, 5vw, 38px);
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #b8c6da;
+    max-width: 750px;
+    margin: auto;
+    font-size: 15px;
+}
+
+/* Notice */
+
+.notice {
+    background: #13243a;
+    border: 1px solid #24496a;
+    border-right: 4px solid #35d9ff;
+    border-radius: 12px;
+    padding: 15px 18px;
+    margin: 25px auto;
+    color: #d8eaff;
+    font-size: 14px;
+}
+
+/* Cards */
+
+.section-heading {
+    margin: 35px 0 20px;
+    font-size: 22px;
+    color: #35d9ff;
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-bottom: 35px;
+}
+
+.guide-card,
+.guide-content {
+    background: #111c2e;
+    border: 1px solid #263750;
+    border-radius: 16px;
+    padding: 22px;
+}
+
+.guide-card {
+    transition: 0.25s;
+}
+
+.guide-card:hover {
+    border-color: #35d9ff;
+    transform: translateY(-3px);
+}
+
+.guide-card h3 {
+    color: #35d9ff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.guide-card p {
+    color: #c0cde0;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.guide-link {
+    display: inline-block;
+    background: #35d9ff;
+    color: #07111d;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 9px;
+    font-size: 13px;
+    margin-top: 8px;
+}
+
+/* Ownership */
+
+.guide-content {
+    margin-bottom: 20px;
+    scroll-margin-top: 20px;
+}
+
+.guide-content h2 {
+    color: #35d9ff;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.guide-content p,
+.guide-content li {
+    color: #c0cde0;
+    font-size: 14px;
+}
+
+.guide-content ol {
+    padding-right: 22px;
+    margin: 7px 0 12px;
+}
+
+.guide-content li {
+    margin-bottom: 5px;
+}
+
+.info-label {
+    color: #35d9ff;
+    font-weight: bold;
+}
+
+/* Footer */
+
+footer {
+    border-top: 1px solid #263750;
+    background: #101a2c;
+    text-align: center;
+    padding: 25px 15px;
+    color: #aab9ce;
+    font-size: 13px;
+    margin-top: 40px;
+}
+
+footer strong {
+    color: #35d9ff;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .hero {
+        padding-top: 35px;
+    }
+
+    .guide-card,
+    .guide-content {
+        padding: 18px;
+    }
+}
 </style>
 </head>
-<body>
-<header><div class="container header-content"><a class="logo" href="index.html">GIGANET</a><a class="back-link" href="registration-guide.html">بازگشت به راهنمای ثبت‌نام‌ها</a></div></header>
-<main class="container">
-<section class="hero"><h1>راهنمای جامع نهضت ملی مسکن</h1><p>راهنمای شرایط، مدارک، تسهیلات کمک‌ودیعه مسکن و استعلام مالکیت</p></section>
-<div class="notice">📌 این صفحه برای معرفی و راهنمایی مخاطبان درباره طرح‌های مسکن تهیه شده است. شرایط و امکان ثبت درخواست ممکن است با توجه به نوع طرح، شهر و ظرفیت موجود متفاوت باشد. ثبت‌نام به‌تنهایی به معنای تأیید نهایی یا تضمین واگذاری نیست.</div>
-<h2 class="section-heading">بخش‌های راهنمای مسکن</h2>
-<div class="guide-grid">
-<article class="guide-card"><h3>مسکن</h3><p>طرح جوانی جمعیت، واگذاری اراضی روستایی و تِما</p><a class="guide-link" href="housing-programs.html">مشاهده راهنما</a></article>
-<article class="guide-card"><h3>تسهیلات کمک‌ودیعه مسکن</h3><p>شرایط متقاضیان، سقف تسهیلات و نکات دریافت وام</p><a class="guide-link" href="rent-loan.html">مشاهده شرایط</a></article>
-<article class="guide-card"><h3>طرح آشیان</h3><p>وضعیت آخرین مهلت ثبت‌نام</p><a class="guide-link" href="ashian.html">مشاهده وضعیت</a></article>
-<article class="guide-card"><h3>استعلام مالکیت</h3><p>ورود مستقیم به سامانه استعلام</p><a class="guide-link" href="#ownership">ورود به راهنما</a></article>
-</div>
 
-<section class="guide-content" id="housing-programs">
-<h2>مسکن | طرح‌های حمایتی</h2><p>پس از بررسی شرایط اولیه، در صورت مشمول بودن، مدارک لازم را همراه داشته باشید و برای راهنمایی و انجام مراحل به مجموعه دیجیتالی <strong>GIGANET</strong> مراجعه کنید.</p>
-<section class="guide-content" id="ownership"><h2>استعلام مالکیت</h2><p>برای دریافت استعلام مالکیت، از طریق لینک مستقیم زیر وارد سامانه طرح‌های حمایتی مسکن شوید.</p><ol><li>وارد سامانه شوید.</li><li>شماره تلفن همراه به نام خودتان را وارد کنید.</li><li>بانک موردنظر را انتخاب کنید.</li><li>درخواست استعلام مالکیت را ثبت و نتیجه را دریافت کنید.</li></ol><p>این استعلام از طریق سامانه به‌صورت رایگان قابل انجام است.</p><a class="guide-link" href="https://saman.mrud.ir/login?returnRouteName=PropertyOwnershipInquiryPermitList" target="_blank" rel="noopener noreferrer">ورود به سامانه استعلام مالکیت</a></section>
+<body>
+
+<header>
+    <div class="container header-content">
+        <a class="logo" href="index.html">GIGANET</a>
+
+        <a class="back-link" href="registration-guide.html">
+            بازگشت به راهنمای ثبت‌نام‌ها
+        </a>
+    </div>
+</header>
+
+<main class="container">
+
+    <section class="hero">
+        <h1>راهنمای جامع نهضت ملی مسکن</h1>
+        <p>راهنمای طرح‌های مسکن و استعلام مالکیت</p>
+    </section>
+
+    <div class="notice">
+        📌 این صفحه برای معرفی و راهنمایی مخاطبان درباره طرح‌های مسکن تهیه شده است.
+        شرایط و امکان ثبت درخواست ممکن است با توجه به نوع طرح، شهر و ظرفیت موجود
+        متفاوت باشد. ثبت‌نام به‌تنهایی به معنای تأیید نهایی یا تضمین واگذاری نیست.
+    </div>
+
+    <h2 class="section-heading">بخش‌های راهنمای مسکن</h2>
+
+    <div class="guide-grid">
+
+        <article class="guide-card">
+            <h3>مسکن</h3>
+            <p>طرح جوانی جمعیت، واگذاری اراضی روستایی و تِما</p>
+            <a class="guide-link" href="housing-programs.html">
+                مشاهده راهنما
+            </a>
+        </article>
+
+        <article class="guide-card">
+            <h3>تسهیلات کمک‌ودیعه مسکن</h3>
+            <p>شرایط متقاضیان، سقف تسهیلات و نکات دریافت وام</p>
+            <a class="guide-link" href="rent-loan.html">
+                مشاهده شرایط
+            </a>
+        </article>
+
+        <article class="guide-card">
+            <h3>طرح آشیان</h3>
+            <p>وضعیت آخرین مهلت ثبت‌نام</p>
+            <a class="guide-link" href="ashian.html">
+                مشاهده وضعیت
+            </a>
+        </article>
+
+        <article class="guide-card">
+            <h3>استعلام مالکیت</h3>
+            <p>راهنمای ورود به سامانه استعلام مالکیت</p>
+            <a class="guide-link" href="#ownership">
+                ورود به راهنما
+            </a>
+        </article>
+
+    </div>
+
+    <section class="guide-content" id="ownership">
+
+        <h2>استعلام مالکیت</h2>
+
+        <p>
+            برای دریافت استعلام مالکیت، از طریق لینک مستقیم زیر وارد سامانه
+            طرح‌های حمایتی مسکن شوید.
+        </p>
+
+        <ol>
+            <li>وارد سامانه شوید.</li>
+            <li>شماره تلفن همراه به نام خودتان را وارد کنید.</li>
+            <li>بانک موردنظر را انتخاب کنید.</li>
+            <li>درخواست استعلام مالکیت را ثبت و نتیجه را دریافت کنید.</li>
+        </ol>
+
+        <p>
+            این استعلام از طریق سامانه به‌صورت رایگان قابل انجام است.
+        </p>
+
+        <a class="guide-link"
+           href="https://saman.mrud.ir/login?returnRouteName=PropertyOwnershipInquiryPermitList">
+            ورود به سامانه استعلام مالکیت
+        </a>
+
+    </section>
+
 </main>
-<footer><strong>GIGANET</strong><p>سوسنگرد، روبروی دانشگاه آزاد اسلامی</p><p>خدمات دیجیتال، کامپیوتری و دانشجویی</p></footer>
+
+<footer>
+    <strong>GIGANET</strong>
+    <p>سوسنگرد، روبروی دانشگاه آزاد اسلامی</p>
+    <p>خدمات دیجیتال، کامپیوتری و دانشجویی</p>
+</footer>
+
 </body>
 </html>
